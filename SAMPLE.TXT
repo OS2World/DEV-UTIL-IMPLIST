@@ -1,0 +1,215 @@
+
+This sample shows two executions of EXEHDR.  The first is using the normal
+verbose listing option.  Note that the imported function list is difficult
+to figure out because of cardinal numbers, such as DOSCALLS.5.
+
+The second execution of EXEHDR is filtered thru IMPFILT to decode the
+cardinal numbers.  You can verify that DOSCALLS.5 is DOSEXIT.
+
+The undocumented function DOSQPROCSTATUS  (DOSCALLS.154) is listed.  It
+turns out, using CodeView, that this is the system call which provides
+all the status information for the PSTAT command.
+
+
+
+
+   N O R M A L   E X E C U T I O N   O F   E X E H D R
+
+
+
+
+Microsoft (R) EXE File Header Utility  Version 2.01    
+Copyright (C) Microsoft Corp 1985-1990.  All rights reserved.
+
+.EXE size (bytes)         3cc2
+Magic number:             5a4d
+Bytes on last page:       00c2
+Pages in file:            001f
+Relocations:              0000
+Paragraphs in header:     0004
+Extra paragraphs needed:  0000
+Extra paragraphs wanted:  ffff
+Initial stack location:   0000:00b8
+Word checksum:            0000
+Entry point:              0000:0000
+Relocation table address: 0040
+Reserved words:
+ 0000 0000 0000 0000 0000 0000 0000 0000
+ 0000 0000 0000 0000 0000
+New .EXE header address:  00000080
+Memory needed:            16K
+
+Module:                   PSTAT
+Description:              pstat.EXE
+Operating system:         Microsoft/IBM OS/2
+Data:                     NONSHARED
+Initial CS:IP:            seg   1 offset 128e
+Initial SS:SP:            seg   3 offset 0000
+Extra stack allocation:   2000 bytes
+DGROUP:                   seg   3
+Linker version:           5.05
+32-bit Checksum:          60fd39df
+Segment Table:            000000c0 length 0018 (24)
+Resource Table:           000000d8 length 0000 (0)
+Resident Names Table:     000000d8 length 0009 (9)
+Module Reference Table:   000000e1 length 000a (10)
+Imported Names Table:     000000eb length 0024 (36)
+Entry Table:              0000010f length 0002 (2)
+Non-resident Names Table: 00000111 length 000d (13)
+Movable entry points:     0
+Segment sector size:      16
+Heap allocation:          2000 bytes
+Application type:         WINDOWCOMPAT
+
+no. type address  file  mem   flags
+  1 CODE 00000120 0363b 0363c EXECUTEREAD, LOADONCALL, NONCONFORMING, NOIOPL,
+                              relocs, (fixed), (nondiscardable), (nonshared)
+  2 CODE 00003850 0002a 0002c EXECUTEREAD, LOADONCALL, NONCONFORMING, NOIOPL,
+                              relocs, (fixed), (nondiscardable), (nonshared)
+  3 DATA 00003890 00428 01ce0 READWRITE, NONSHARED, LOADONCALL, NOEXPANDDOWN,
+                              NOIOPL, relocs, iterated, (fixed),
+                              (nondiscardable)
+
+
+  1 type   offset target
+    BASE    31fd  seg   2 offset 0000
+    BASE    16ae  seg   3 offset 0000
+    PTR     1442  imp DOSCALLS.5
+    PTR     2d7f  imp MSG.1
+    PTR     30e2  imp DOSCALLS.137
+    PTR     317f  imp DOSCALLS.138
+    PTR     11f3  imp VIOCALLS.7
+    PTR     0317  imp DOSCALLS.154
+    PTR     35b3  imp KBDCALLS.4
+    PTR     32e4  imp NLS.1
+    PTR     2cc8  imp DOSCALLS.34
+    PTR     3588  imp KBDCALLS.10
+    PTR     35c4  imp KBDCALLS.11
+    PTR     35fd  imp VIOCALLS.19
+    PTR     3243  imp NLS.4
+    PTR     118a  imp VIOCALLS.21
+    PTR     306e  imp KBDCALLS.13
+    PTR     11b0  imp VIOCALLS.22
+    PTR     2fe8  imp DOSCALLS.38
+    PTR     2d09  imp DOSCALLS.39
+    PTR     11d1  imp VIOCALLS.24
+    PTR     3476  imp KBDCALLS.22
+    PTR     2d46  imp DOSCALLS.49
+    PTR     2398  imp DOSCALLS.58
+    PTR     141d  imp DOSCALLS.59
+    PTR     292b  imp DOSCALLS.72
+    PTR     304b  imp DOSCALLS.77
+    PTR     13ac  imp DOSCALLS.89
+    PTR     2c5b  imp DOSCALLS.92
+  29 relocations
+
+  2 type   offset target
+    PTR     0025  imp MSG.2
+   1 relocations
+
+  3 type   offset target
+    BASE    019a  seg   3 offset 0000
+   1 relocations
+
+
+
+
+   E X E H D R   O U T P U T   F I L T E R E D   B Y   I M P F I L T
+
+
+
+
+
+Microsoft (R) EXE File Header Utility  Version 2.01    
+Copyright (C) Microsoft Corp 1985-1990.  All rights reserved.
+
+.EXE size (bytes)         3cc2
+Magic number:             5a4d
+Bytes on last page:       00c2
+Pages in file:            001f
+Relocations:              0000
+Paragraphs in header:     0004
+Extra paragraphs needed:  0000
+Extra paragraphs wanted:  ffff
+Initial stack location:   0000:00b8
+Word checksum:            0000
+Entry point:              0000:0000
+Relocation table address: 0040
+Reserved words:
+ 0000 0000 0000 0000 0000 0000 0000 0000
+ 0000 0000 0000 0000 0000
+New .EXE header address:  00000080
+Memory needed:            16K
+
+Module:                   PSTAT
+Description:              pstat.EXE
+Operating system:         Microsoft/IBM OS/2
+Data:                     NONSHARED
+Initial CS:IP:            seg   1 offset 128e
+Initial SS:SP:            seg   3 offset 0000
+Extra stack allocation:   2000 bytes
+DGROUP:                   seg   3
+Linker version:           5.05
+32-bit Checksum:          60fd39df
+Segment Table:            000000c0 length 0018 (24)
+Resource Table:           000000d8 length 0000 (0)
+Resident Names Table:     000000d8 length 0009 (9)
+Module Reference Table:   000000e1 length 000a (10)
+Imported Names Table:     000000eb length 0024 (36)
+Entry Table:              0000010f length 0002 (2)
+Non-resident Names Table: 00000111 length 000d (13)
+Movable entry points:     0
+Segment sector size:      16
+Heap allocation:          2000 bytes
+Application type:         WINDOWCOMPAT
+
+no. type address  file  mem   flags
+  1 CODE 00000120 0363b 0363c EXECUTEREAD, LOADONCALL, NONCONFORMING, NOIOPL,
+                              relocs, (fixed), (nondiscardable), (nonshared)
+  2 CODE 00003850 0002a 0002c EXECUTEREAD, LOADONCALL, NONCONFORMING, NOIOPL,
+                              relocs, (fixed), (nondiscardable), (nonshared)
+  3 DATA 00003890 00428 01ce0 READWRITE, NONSHARED, LOADONCALL, NOEXPANDDOWN,
+                              NOIOPL, relocs, iterated, (fixed),
+                              (nondiscardable)
+
+
+  1 type   offset target
+    BASE    31fd  seg   2 offset 0000
+    BASE    16ae  seg   3 offset 0000
+    PTR     1442  imp DOSCALLS.5        DOSEXIT
+    PTR     2d7f  imp MSG.1             DOSPUTMESSAGE
+    PTR     30e2  imp DOSCALLS.137      DOSREAD
+    PTR     317f  imp DOSCALLS.138      DOSWRITE
+    PTR     11f3  imp VIOCALLS.7        VIOSCROLLUP
+    PTR     0317  imp DOSCALLS.154      DOSQPROCSTATUS
+    PTR     35b3  imp KBDCALLS.4        KBDCHARIN
+    PTR     32e4  imp NLS.1             DOSCASEMAP
+    PTR     2cc8  imp DOSCALLS.34       DOSALLOCSEG
+    PTR     3588  imp KBDCALLS.10       KBDGETSTATUS
+    PTR     35c4  imp KBDCALLS.11       KBDSETSTATUS
+    PTR     35fd  imp VIOCALLS.19       VIOWRTTTY
+    PTR     3243  imp NLS.4             DOSGETDBCSEV
+    PTR     118a  imp VIOCALLS.21       VIOGETMODE
+    PTR     306e  imp KBDCALLS.13       KBDFLUSHBUFFER
+    PTR     11b0  imp VIOCALLS.22       VIOSETMODE
+    PTR     2fe8  imp DOSCALLS.38       DOSREALLOCSEG
+    PTR     2d09  imp DOSCALLS.39       DOSFREESEG
+    PTR     11d1  imp VIOCALLS.24       VIOREADCELLSTR
+    PTR     3476  imp KBDCALLS.22       KBDPEEK
+    PTR     2d46  imp DOSCALLS.49       DOSGETMACHINEMODE
+    PTR     2398  imp DOSCALLS.58       DOSCHGFILEPTR
+    PTR     141d  imp DOSCALLS.59       DOSCLOSE
+    PTR     292b  imp DOSCALLS.72       DOSQCURDISK
+    PTR     304b  imp DOSCALLS.77       DOSQHANDTYPE
+    PTR     13ac  imp DOSCALLS.89       DOSSETVEC
+    PTR     2c5b  imp DOSCALLS.92       DOSGETVERSION
+  29 relocations
+
+  2 type   offset target
+    PTR     0025  imp MSG.2             DOSTRUEGETMESSAGE
+   1 relocations
+
+  3 type   offset target
+    BASE    019a  seg   3 offset 0000
+   1 relocations
+

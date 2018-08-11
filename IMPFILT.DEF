@@ -1,0 +1,17 @@
+;-----------------------------------------------------------------
+; IMPFILT.DEF
+;
+; This module definition file is required so that IMPFILT.EXE will
+; execute in an OS/2 window.
+;-----------------------------------------------------------------
+NAME         IMPFILT
+             WINDOWCOMPAT
+
+DESCRIPTION  'IMPFILT.EXE (c) Stephen L. Reed 1990'
+
+EXETYPE      OS2
+
+
+
+
+

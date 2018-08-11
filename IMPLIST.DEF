@@ -1,0 +1,16 @@
+;-----------------------------------------------------------------
+; IMPLIST.DEF
+;
+; This module definition file is required so that IMPLIST.EXE will
+; execute in an OS/2 window.
+;-----------------------------------------------------------------
+NAME         IMPLIST
+             WINDOWCOMPAT
+
+DESCRIPTION  'IMPLIST.EXE (c) Stephen L. Reed 1990'
+
+EXETYPE      OS2
+
+
+
+
